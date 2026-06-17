@@ -21,43 +21,63 @@ const {
     <title>{title}</title>
   </head>
   <body>
-    <header class="site-header">
-      <a class="brand" href="/" aria-label="Cas-Per home">
-        <img src="/assets/casper-orizzontale.webp" alt="Cas-Per" />
-      </a>
-      <nav aria-label="Navigazione principale">
-        <a href="/#servizi">Servizi</a>
-        <a href="/#testimonianze">Dicono di noi</a>
-        <a href="/diventa-impresa-affiliata/">Affiliazione</a>
-        <a class="nav-cta" href="/#contatti">Contatti</a>
-      </nav>
-    </header>
-    <main>
-      <slot />
-    </main>
-    <footer class="site-footer">
-      <div>
-        <img src="/assets/casper-orizzontale.webp" alt="Cas-Per" />
-        <p>Tecnologia a servizio del settore funebre.</p>
+    <div class="site-shell">
+      <aside class="side-nav" aria-label="Navigazione principale">
+        <a class="side-brand" href="/" aria-label="Cas-Per home">
+          <img src="/assets/Risorsa-1cp.png" alt="Cas-Per" />
+        </a>
+        <nav>
+          <a href="/">Home</a>
+          <a href="/#chi-siamo">Chi siamo</a>
+          <a href="/#servizi">Servizi</a>
+          <a href="/#testimonianze">Dicono di noi</a>
+          <a href="/#contatti">Contatti</a>
+        </nav>
+        <a class="side-cta" href="/diventa-impresa-affiliata/">AF</a>
+      </aside>
+
+      <header class="mobile-header">
+        <a class="brand" href="/" aria-label="Cas-Per home">
+          <img src="/assets/casper-orizzontale.webp" alt="Cas-Per" />
+        </a>
+        <nav aria-label="Navigazione mobile">
+          <a href="/#servizi">Servizi</a>
+          <a href="/diventa-impresa-affiliata/">Affiliazione</a>
+          <a href="/#contatti">Contatti</a>
+        </nav>
+      </header>
+
+      <div class="page-frame">
+        <main>
+          <slot />
+        </main>
+        <footer class="site-footer">
+          <div>
+            <img src="/assets/casper-orizzontale.webp" alt="Cas-Per" />
+            <p>Tecnologia a servizio del settore funebre.</p>
+          </div>
+          <p>Cas-Per Srl - Tarcento</p>
+        </footer>
       </div>
-      <p>Cas-Per Srl - Tarcento</p>
-    </footer>
+    </div>
   </body>
 </html>
 
 <style is:global>
   :root {
-    --bg: #f6f8f7;
+    --bg: #f8f8f6;
     --paper: #ffffff;
-    --ink: #1f2b2d;
-    --muted: #647174;
-    --line: #dfe7e5;
-    --brand: #118a9c;
-    --brand-dark: #0b5e6d;
-    --accent: #b69b62;
-    --soft: #e8f3f2;
-    --shadow: 0 22px 80px rgba(15, 42, 47, 0.12);
-    font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    --ink: #243134;
+    --muted: #6f7c80;
+    --line: #e3e6e4;
+    --brand: #1396a7;
+    --brand-dark: #0d6170;
+    --accent: #c39a76;
+    --rose: #d99b9b;
+    --soft: #edf5f3;
+    --sidebar: #f3f4f1;
+    --shadow: 0 20px 60px rgba(32, 49, 53, 0.1);
+    font-family: "Segoe UI", Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
   }
 
   * {
@@ -84,35 +104,88 @@ const {
     max-width: 100%;
   }
 
-  .site-header {
-    position: sticky;
-    top: 0;
-    z-index: 20;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 24px;
-    padding: 18px clamp(18px, 4vw, 56px);
-    border-bottom: 1px solid rgba(223, 231, 229, 0.82);
-    background: rgba(246, 248, 247, 0.94);
-    backdrop-filter: blur(16px);
+  .site-shell {
+    min-height: 100vh;
   }
 
-  .brand img {
-    width: 160px;
+  .side-nav {
+    position: fixed;
+    inset: 0 auto 0 0;
+    z-index: 20;
+    display: flex;
+    width: 128px;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 28px;
+    padding: 28px 18px;
+    border-right: 1px solid rgba(227, 230, 228, 0.92);
+    background: rgba(243, 244, 241, 0.96);
+    backdrop-filter: blur(14px);
+  }
+
+  .side-brand img {
+    width: 86px;
     height: auto;
   }
 
-  nav {
+  .side-nav nav {
     display: flex;
     align-items: center;
-    gap: 22px;
+    flex-direction: column;
+    gap: 18px;
     color: var(--muted);
-    font-size: 0.95rem;
+    font-size: 0.78rem;
+    font-weight: 700;
+    text-align: center;
+    text-transform: lowercase;
   }
 
-  nav a {
+  .side-nav nav a {
     text-decoration: none;
+  }
+
+  .side-nav nav a:hover {
+    color: var(--brand-dark);
+  }
+
+  .side-cta {
+    display: grid;
+    place-items: center;
+    width: 48px;
+    height: 48px;
+    border: 1px solid var(--line);
+    border-radius: 50%;
+    background: var(--paper);
+    color: var(--brand-dark);
+    font-size: 0.78rem;
+    font-weight: 800;
+    text-decoration: none;
+    box-shadow: 0 8px 24px rgba(32, 49, 53, 0.07);
+  }
+
+  .mobile-header {
+    display: none;
+  }
+
+  .brand img {
+    width: 148px;
+    height: auto;
+  }
+
+  .mobile-header nav {
+    display: flex;
+    gap: 16px;
+    color: var(--muted);
+    font-size: 0.9rem;
+  }
+
+  .mobile-header nav a {
+    text-decoration: none;
+  }
+
+  .page-frame {
+    margin-left: 128px;
   }
 
   .nav-cta,
@@ -136,7 +209,7 @@ const {
   }
 
   .section {
-    padding: clamp(64px, 8vw, 112px) clamp(18px, 4vw, 56px);
+    padding: clamp(64px, 8vw, 112px) clamp(24px, 5vw, 76px);
   }
 
   .container {
@@ -161,15 +234,22 @@ const {
   }
 
   h1 {
-    max-width: 820px;
-    font-size: clamp(2.4rem, 6vw, 5.6rem);
-    line-height: 0.98;
+    max-width: 760px;
+    font-size: clamp(2.8rem, 6.8vw, 6.2rem);
+    font-weight: 300;
+    line-height: 0.95;
     letter-spacing: 0;
+  }
+
+  h1 strong {
+    color: var(--brand-dark);
+    font-weight: 750;
   }
 
   h2 {
     max-width: 760px;
     font-size: clamp(2rem, 4vw, 3.6rem);
+    font-weight: 320;
     line-height: 1.04;
     letter-spacing: 0;
   }
@@ -186,13 +266,92 @@ const {
   }
 
   .hero {
-    min-height: calc(100vh - 82px);
+    position: relative;
+    min-height: 100vh;
     display: grid;
     align-items: center;
-    padding: clamp(48px, 7vw, 96px) clamp(18px, 4vw, 56px);
+    overflow: hidden;
+    padding: clamp(58px, 7vw, 92px) clamp(24px, 5vw, 76px) clamp(34px, 5vw, 64px);
     background:
-      linear-gradient(90deg, rgba(246, 248, 247, 0.98) 0%, rgba(246, 248, 247, 0.86) 52%, rgba(246, 248, 247, 0.2) 100%),
-      url("/assets/annuncifunebri_pc-1.jpg") right center / min(48vw, 760px) auto no-repeat;
+      url("/assets/art-top00.png") right top / min(66vw, 980px) auto no-repeat,
+      linear-gradient(90deg, rgba(248, 248, 246, 1), rgba(248, 248, 246, 0.96));
+  }
+
+  .hero-grid {
+    position: relative;
+    display: grid;
+    grid-template-columns: minmax(0, 0.92fr) minmax(340px, 0.9fr);
+    gap: clamp(24px, 4vw, 58px);
+    align-items: center;
+  }
+
+  .hero-kicker {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    margin-bottom: 18px;
+    color: var(--brand);
+    font-size: clamp(1.6rem, 4vw, 3.2rem);
+    font-weight: 300;
+    line-height: 1;
+  }
+
+  .hero-kicker strong {
+    color: var(--brand-dark);
+    font-weight: 750;
+  }
+
+  .hero-note {
+    align-self: start;
+    justify-self: end;
+    max-width: 300px;
+    margin-top: 10px;
+    color: var(--muted);
+    font-size: 0.78rem;
+    font-weight: 800;
+    line-height: 1.7;
+    text-transform: uppercase;
+  }
+
+  .hero-visual {
+    position: relative;
+    align-self: end;
+    min-height: 520px;
+  }
+
+  .hero-visual img {
+    position: absolute;
+    right: min(2vw, 24px);
+    bottom: 0;
+    width: min(48vw, 620px);
+    max-width: none;
+  }
+
+  .hero-card {
+    position: absolute;
+    right: 0;
+    bottom: clamp(34px, 6vw, 86px);
+    width: min(280px, 70%);
+    padding: 24px;
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.92);
+    box-shadow: var(--shadow);
+  }
+
+  .hero-card span {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--brand-dark);
+    font-size: 0.78rem;
+    font-weight: 800;
+    text-transform: uppercase;
+  }
+
+  .hero-card p {
+    margin-bottom: 0;
+    color: var(--muted);
+    font-size: 0.95rem;
   }
 
   .hero-actions {
@@ -207,7 +366,7 @@ const {
     grid-template-columns: repeat(4, 1fr);
     gap: 1px;
     overflow: hidden;
-    border: 1px solid var(--line);
+    border: 1px solid rgba(227, 230, 228, 0.86);
     border-radius: 8px;
     background: var(--line);
   }
@@ -258,7 +417,7 @@ const {
   }
 
   .dark {
-    background: #203235;
+    background: #273639;
     color: #fff;
   }
 
@@ -318,7 +477,7 @@ const {
     display: flex;
     justify-content: space-between;
     gap: 24px;
-    padding: 36px clamp(18px, 4vw, 56px);
+    padding: 36px clamp(24px, 5vw, 76px);
     border-top: 1px solid var(--line);
     color: var(--muted);
     background: var(--paper);
@@ -329,14 +488,35 @@ const {
     margin-bottom: 8px;
   }
 
-  @media (max-width: 860px) {
-    .site-header,
+  @media (max-width: 980px) {
+    .side-nav {
+      display: none;
+    }
+
+    .page-frame {
+      margin-left: 0;
+    }
+
+    .mobile-header {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      padding: 16px 20px;
+      border-bottom: 1px solid rgba(227, 230, 228, 0.92);
+      background: rgba(248, 248, 246, 0.96);
+      backdrop-filter: blur(14px);
+    }
+
     .site-footer {
       align-items: flex-start;
       flex-direction: column;
     }
 
-    nav {
+    .mobile-header nav {
       width: 100%;
       overflow-x: auto;
       padding-bottom: 4px;
@@ -345,9 +525,33 @@ const {
     .hero {
       min-height: auto;
       background:
-        linear-gradient(180deg, rgba(246, 248, 247, 0.98), rgba(246, 248, 247, 0.88)),
-        url("/assets/annuncifunebri_pc-1.jpg") center bottom / 92vw auto no-repeat;
-      padding-bottom: 320px;
+        url("/assets/art-top00.png") right top / 140vw auto no-repeat,
+        linear-gradient(180deg, rgba(248, 248, 246, 1), rgba(248, 248, 246, 0.96));
+    }
+
+    .hero-grid {
+      grid-template-columns: 1fr;
+    }
+
+    .hero-note {
+      justify-self: start;
+      margin-top: 0;
+    }
+
+    .hero-visual {
+      min-height: 420px;
+    }
+
+    .hero-visual img {
+      right: 50%;
+      width: min(680px, 112vw);
+      transform: translateX(50%);
+    }
+
+    .hero-card {
+      right: 50%;
+      width: min(320px, 86vw);
+      transform: translateX(50%);
     }
 
     .stats,
