@@ -1,0 +1,33 @@
+---
+const testimonials = [
+  {
+    quote: "Uno strumento fondamentale per il nostro operato e molto apprezzato anche dalle famiglie che assistiamo.",
+    author: "Marco Tropeano",
+    company: "Onoranze Funebri e Casa Funeraria Sant'Ambrogio - Magnago (MI)",
+  },
+  {
+    quote: "Abbiamo dimezzato i tempi di realizzazione e condivisione degli annunci.",
+    author: "Daniele Magini",
+    company: "Onoranze Funebri Agape - Abbadia San Salvatore (SI)",
+  },
+  {
+    quote: "Piattaforma facile da usare ed intuitiva sia per le onoranze funebri sia per i clienti.",
+    author: "Katia Regazzo",
+    company: "Onoranze Funebri Zanini e Casa Funeraria Oltre - San Dona di Piave (VE)",
+  },
+  {
+    quote: "Alla nostra azienda ha fatto fare uno step importante nei confronti della clientela.",
+    author: "Luigi Duranti",
+    company: "Onoranze Funebri Duranti - Urbino (PU)",
+  },
+];
+---
+
+<div class="grid">
+  {testimonials.map((item) => (
+    <blockquote>
+      <p>"{item.quote}"</p>
+      <cite>{item.author}<br />{item.company}</cite>
+    </blockquote>
+  ))}
+</div>

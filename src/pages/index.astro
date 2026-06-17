@@ -1,0 +1,115 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import StatsStrip from "../components/StatsStrip.astro";
+import Testimonials from "../components/Testimonials.astro";
+---
+
+<BaseLayout
+  title="Cas-Per | Digitalizzazione del cordoglio per imprese funebri"
+  description="Cas-Per sviluppa soluzioni digitali per imprese funebri. Con AnnunciFunebri.it offre necrologi online, cordogli digitali e raccolte cartacee dei messaggi."
+>
+  <section class="hero">
+    <div class="container">
+      <p class="eyebrow">Cas-Per per il settore funebre</p>
+      <h1>Digitalizziamo il cordoglio senza perdere il valore umano.</h1>
+      <p class="lead">
+        Da oltre 13 anni affianchiamo le imprese funebri con strumenti digitali semplici, personalizzati e rispettosi.
+        Il nostro prodotto faro e AnnunciFunebri.it: la rete italiana per necrologi online e messaggi di cordoglio.
+      </p>
+      <div class="hero-actions">
+        <a class="button" href="/diventa-impresa-affiliata/">Diventa impresa affiliata</a>
+        <a class="button secondary" href="#servizi">Scopri l'ecosistema</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <StatsStrip />
+    </div>
+  </section>
+
+  <section class="section soft">
+    <div class="container split">
+      <div>
+        <p class="eyebrow">AnnunciFunebri.it</p>
+        <h2>Non un semplice software di necrologi, ma un servizio per restare vicini.</h2>
+        <p class="lead">
+          Le famiglie e le comunita cercano informazioni online, ma chiedono discrezione, chiarezza e cura. AnnunciFunebri.it
+          permette all'impresa funebre di offrire un servizio moderno e profondamente rispettoso.
+        </p>
+        <a class="button" href="/diventa-impresa-affiliata/">Approfondisci l'affiliazione</a>
+      </div>
+      <div class="media-panel">
+        <img src="/assets/necrologi-online.webp" alt="Esempio di servizio necrologi online" />
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="servizi">
+    <div class="container">
+      <p class="eyebrow">Cosa offriamo</p>
+      <h2>Un ecosistema digitale su misura per la tua impresa funebre.</h2>
+      <div class="grid">
+        <article class="card">
+          <h3>Necrologi online e cordogli</h3>
+          <p>Pubblicazione degli annunci, invio gratuito dei messaggi e raccolta ordinata dei cordogli ricevuti.</p>
+        </article>
+        <article class="card">
+          <h3>Memoria cartacea</h3>
+          <p>I messaggi digitali possono diventare una pubblicazione fine e discreta da consegnare alla famiglia.</p>
+        </article>
+        <article class="card">
+          <h3>Integrazione sito</h3>
+          <p>AnnunciFunebri.it valorizza il sito dell'impresa e rende piu utile la comunicazione verso la comunita.</p>
+        </article>
+        <article class="card">
+          <h3>Case funerarie</h3>
+          <p>Monitor, contenuti sincronizzati e strumenti digitali per ambienti di accoglienza piu ordinati e professionali.</p>
+        </article>
+        <article class="card">
+          <h3>Comunicazione e immagine</h3>
+          <p>Siti, grafica, materiali e consulenza per costruire una presenza coerente e riconoscibile.</p>
+        </article>
+        <article class="card">
+          <h3>Assistenza dedicata</h3>
+          <p>Supporto umano, configurazione, personalizzazione e accompagnamento operativo nel tempo.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section dark">
+    <div class="container split">
+      <div>
+        <p class="eyebrow">Metodo</p>
+        <h2>Tecnologia, tradizione e cura nello stesso percorso.</h2>
+      </div>
+      <p class="lead">
+        Non proponiamo strumenti generici adattati al settore funebre. Progettiamo soluzioni verticali per imprese che
+        vogliono innovare senza snaturare il proprio ruolo di vicinanza, guida e professionalita.
+      </p>
+    </div>
+  </section>
+
+  <section class="section" id="testimonianze">
+    <div class="container">
+      <p class="eyebrow">Dicono di noi</p>
+      <h2>Le imprese affiliate raccontano il valore del servizio.</h2>
+      <Testimonials />
+    </div>
+  </section>
+
+  <section class="section soft" id="contatti">
+    <div class="container split">
+      <div>
+        <p class="eyebrow">Teniamoci in contatto</p>
+        <h2>Vuoi capire come AnnunciFunebri.it puo valorizzare la tua impresa?</h2>
+      </div>
+      <div>
+        <p class="lead">Partiamo da una consulenza senza impegno: analizziamo sito, comunicazione e bisogni operativi della tua impresa.</p>
+        <a class="button" href="mailto:info@cas-per.it?subject=Richiesta%20informazioni%20AnnunciFunebri.it">Richiedi informazioni</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

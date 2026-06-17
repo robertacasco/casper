@@ -1,0 +1,134 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import StatsStrip from "../components/StatsStrip.astro";
+import Testimonials from "../components/Testimonials.astro";
+---
+
+<BaseLayout
+  title="Diventa impresa affiliata AnnunciFunebri.it | Cas-Per"
+  description="Affilia la tua impresa funebre ad AnnunciFunebri.it: necrologi online, cordogli digitali, raccolta cartacea dei messaggi e supporto Cas-Per."
+>
+  <section class="hero">
+    <div class="container">
+      <p class="eyebrow">AnnunciFunebri.it per imprese funebri</p>
+      <h1>Diventa impresa affiliata AnnunciFunebri.it</h1>
+      <p class="lead">
+        Offri alle famiglie un servizio digitale semplice, discreto e gratuito per pubblicare necrologi online,
+        raccogliere messaggi di cordoglio e trasformarli in un ricordo concreto.
+      </p>
+      <div class="hero-actions">
+        <a class="button" href="#richiedi-informazioni">Richiedi informazioni</a>
+        <a class="button secondary" href="#come-funziona">Scopri come funziona</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <StatsStrip />
+    </div>
+  </section>
+
+  <section class="section soft">
+    <div class="container split">
+      <div>
+        <p class="eyebrow">Il cordoglio cambia, il rispetto resta</p>
+        <h2>Un servizio moderno per un bisogno profondamente umano.</h2>
+        <p class="lead">
+          Sempre piu persone cercano online informazioni sulle cerimonie e desiderano far arrivare un messaggio di vicinanza
+          anche quando non possono essere presenti. Per l'impresa funebre, offrire questo servizio significa rispondere a un
+          bisogno reale con professionalita e discrezione.
+        </p>
+      </div>
+      <div class="media-panel">
+        <img src="/assets/necrologi.png" alt="Necrologi online e messaggi di cordoglio" />
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="come-funziona">
+    <div class="container split">
+      <div>
+        <p class="eyebrow">Come funziona</p>
+        <h2>Dalla pubblicazione dell'annuncio alla raccolta dei messaggi.</h2>
+      </div>
+      <ol class="steps">
+        <li>L'impresa pubblica il necrologio online.</li>
+        <li>Parenti, amici e conoscenti trovano l'annuncio.</li>
+        <li>Le persone inviano gratuitamente il proprio messaggio.</li>
+        <li>I cordogli vengono raccolti in modo ordinato.</li>
+        <li>L'impresa puo consegnarli alla famiglia anche in formato cartaceo.</li>
+      </ol>
+    </div>
+  </section>
+
+  <section class="section dark">
+    <div class="container split">
+      <div>
+        <p class="eyebrow">Memoria cartacea</p>
+        <h2>Dal messaggio online a un ricordo da conservare.</h2>
+      </div>
+      <p class="lead">
+        Il valore di AnnunciFunebri.it non si esaurisce online. Ogni messaggio puo diventare parte di una raccolta cartacea
+        elegante e discreta, consegnata alla famiglia come memoria tangibile della vicinanza ricevuta.
+      </p>
+    </div>
+  </section>
+
+  <section class="section">
+    <div class="container">
+      <p class="eyebrow">Valore per l'impresa</p>
+      <h2>Perche affiliarsi</h2>
+      <div class="grid">
+        <article class="card">
+          <h3>Servizio apprezzato</h3>
+          <p>Le famiglie ricevono messaggi, informazioni e ricordi in modo semplice e ordinato.</p>
+        </article>
+        <article class="card">
+          <h3>Immagine piu moderna</h3>
+          <p>L'impresa offre un servizio digitale evoluto senza perdere sobrieta e rispetto.</p>
+        </article>
+        <article class="card">
+          <h3>Sito piu utile</h3>
+          <p>Il sito aziendale diventa uno spazio consultato dalla comunita, non solo una vetrina.</p>
+        </article>
+        <article class="card">
+          <h3>Gestione piu efficiente</h3>
+          <p>Annunci, condivisioni e messaggi vengono raccolti in un sistema pensato per il lavoro quotidiano.</p>
+        </article>
+        <article class="card">
+          <h3>Rete riconosciuta</h3>
+          <p>L'affiliazione inserisce l'impresa in un servizio nazionale gia scelto da circa 200 realta.</p>
+        </article>
+        <article class="card">
+          <h3>Supporto Cas-Per</h3>
+          <p>Configurazione, assistenza e personalizzazione accompagnano ogni fase del percorso.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section soft">
+    <div class="container">
+      <p class="eyebrow">Prova sociale</p>
+      <h2>Il servizio raccontato dalle imprese affiliate.</h2>
+      <Testimonials />
+    </div>
+  </section>
+
+  <section class="section" id="richiedi-informazioni">
+    <div class="container split">
+      <div>
+        <p class="eyebrow">Richiedi informazioni</p>
+        <h2>Vuoi offrire questo servizio anche alle famiglie della tua impresa?</h2>
+      </div>
+      <div>
+        <p class="lead">
+          Scrivici per ricevere una consulenza e capire come AnnunciFunebri.it puo integrarsi nel sito e nella comunicazione
+          della tua impresa funebre.
+        </p>
+        <a class="button" href="mailto:info@cas-per.it?subject=Richiesta%20affiliazione%20AnnunciFunebri.it">Contatta Cas-Per</a>
+      </div>
+    </div>
+  </section>
+</BaseLayout>

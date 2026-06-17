@@ -1,0 +1,17 @@
+---
+const stats = [
+  ["Circa 200", "imprese affiliate"],
+  ["Oltre 290.000", "annunci inseriti all'anno"],
+  ["Oltre 1.350.000", "cordogli ricevuti"],
+  ["21", "regioni coperte"],
+];
+---
+
+<div class="stats">
+  {stats.map(([value, label]) => (
+    <div class="stat">
+      <strong>{value}</strong>
+      <span>{label}</span>
+    </div>
+  ))}
+</div>
